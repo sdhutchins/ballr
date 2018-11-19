@@ -2,3 +2,4 @@
 .DS_Store
 rsconnect/
 .httr-oauth
+.Rproj.user
