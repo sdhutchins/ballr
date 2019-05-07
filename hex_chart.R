@@ -144,7 +144,8 @@ generate_hex_chart = function(hex_data, base_court, court_theme = court_themes$d
       paste0(fill_label, "   "),
       limit = fill_limit,
       labels = label_formatter,
-      guide = guide_colorbar(barwidth = 15)
+      guide = guide_colorbar(barwidth = 15),
+      option="plasma"
     ) +
     scale_alpha_continuous(guide = FALSE, range = alpha_range, trans = "sqrt") +
     theme(legend.text = element_text(size = rel(0.6)))
