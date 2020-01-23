@@ -4,7 +4,6 @@ $(function() {
     var filename = $(this).data("filename");
 
     html2canvas($(".shot-chart-container"), {
-      scale: 2,
       onrendered: function (canvas) {
         var a = document.createElement("a");
         a.href = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
