@@ -1,4 +1,4 @@
-players_url = "http://stats.nba.com/stats/commonallplayers?LeagueID=00&Season=2015-16&IsOnlyCurrentSeason=0"
+players_url = "https://stats.nba.com/stats/commonallplayers?LeagueID=00&Season=2015-16&IsOnlyCurrentSeason=0"
 
 request_headers = c(
   "accept-encoding" = "gzip, deflate, sdch",
@@ -7,6 +7,7 @@ request_headers = c(
   "connection" = "keep-alive",
   "host" = "stats.nba.com",
   "pragma" = "no-cache",
+  "referer" = "https://www.nba.com/",
   "upgrade-insecure-requests" = "1",
   "user-agent" = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML, like Gecko) Version/9.0.2 Safari/601.3.9"
 )
@@ -65,11 +66,11 @@ default_player = find_player_by_name("Stephen Curry")
 default_years = as.character(default_player$from_year:default_player$to_year)
 default_seasons = as.character(season_strings[default_years])
 
-default_season_ix = ifelse(as.numeric(format(Sys.Date(), "%m")) %in% 7:10, 2, 1)
+default_season_ix = ifelse(as.numeric(format(Sys.Date(), "%m")) %in% 6:10, 2, 1)
 default_season = rev(default_seasons)[default_season_ix]
 
 default_season_type = "Regular Season"
 
 player_photo_url = function(player_id) {
-  paste0("http://stats.nba.com/media/players/230x185/", player_id, ".png")
+  paste0("https://stats.nba.com/media/players/230x185/", player_id, ".png")
 }
