@@ -2,6 +2,8 @@ $(function() {
   $(document).on("click", ".download-shot-chart", function(e) {
     e.preventDefault();
     var filename = $(this).data("filename");
+    
+    window.devicePixelRatio = 2;
 
     html2canvas($(".shot-chart-container"), {
       onrendered: function (canvas) {
